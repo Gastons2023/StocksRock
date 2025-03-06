@@ -5,10 +5,17 @@ import auth from '../utils/auth';
 const Navbar = () => {
   const [ loginCheck, setLoginCheck ] = useState(false);
 
-  const checkLogin = () => {
+  const checkLogin = () =>  {
     if(auth.loggedIn()) {
+      console.log('logged in');
       setLoginCheck(true);
     }
+    else {
+      setLoginCheck(false);
+    }
+    console.log(loginCheck);
+    return loginCheck;
+
   };
 
   useEffect(() => {
@@ -19,7 +26,7 @@ const Navbar = () => {
   return (
     <div className='nav'>
       <div className='nav-title'>
-        <Link to='/'>Krazy Kanban Board</Link>
+        <Link to='/'>Stocks Rock!</Link>
       </div>
       <ul>
       {
@@ -43,3 +50,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
+
